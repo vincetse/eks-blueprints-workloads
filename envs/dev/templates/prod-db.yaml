@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-db
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+spec:
+  project: {{ .Values.argoProject | default "default" }}
+  source:
+    chart: postgres
+    path: developing
+    repoURL: https://infrastructure-as-code.github.io/helm-charts
+    targetRevision: 0.1.0
+    helm:
+      valuesObject:
+        appVersion: 16-alpine
+  destination:
+    namespace: {{ .Values.argoNamespace | default "argocd" }}
+    server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
