@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+spec:
+  project: {{ .Values.argoProject | default "default" }}
+  source:
+    chart: hello-world
+    path: incubating
+    repoURL: https://infrastructure-as-code.github.io/helm-charts
+    targetRevision: 0.2.0
+  destination:
+    namespace: {{ .Values.argoNamespace | default "argocd" }}
+    server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
