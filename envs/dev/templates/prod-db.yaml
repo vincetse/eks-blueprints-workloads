@@ -12,7 +12,8 @@ spec:
     targetRevision: 0.1.1
     helm:
       valuesObject:
-        appVersion: 16-alpine
+        postgres:
+          appVersion: 16-alpine
   destination:
     namespace: {{ .Values.argoNamespace | default "argocd" }}
     server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
