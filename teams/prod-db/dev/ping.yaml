@@ -26,10 +26,10 @@ spec:
           value: "prod-db-ping"
         - name: PGSSLMODE
           value: "require"
-        command: |
-          /bin/bash -eux -c "
-            pg_isready --timeout=300
-            psql --expanded --command=\"
+        command: ["/bin/bash", "-eux", "-c"]
+        args:
+        -   pg_isready --timeout=300;
+            psql --expanded --command="
               SELECT
                 b.*
               FROM
@@ -38,6 +38,5 @@ spec:
               WHERE
                 a.application_name = 'prod-db-ping'
               ;
-            \"
-          "
+            ";
       restartPolicy: Always
