@@ -4,23 +4,25 @@ metadata:
   name: prod-db-ping
 spec:
   schedule: "* * * * *"
-  template:
+  jobTemplate:
     spec:
-      restartPolicy: OnFailure
-      containers:
-      - name: ping
-        image: postgres:16-alpine
-        env:
-        - name: PGHOST
-          value: "prod-db-postgres"
-        - name: PGUSER
-          value: "postgres"
-        - name: PGPASSWORD
-          value: "p0stgres"
-        - name: PGAPPNAME
-          value: "prod-db-ping"
-        - name: PGSSLMODE
-          value: "require"
-        command: ["/bin/bash", "-eux", "-c"]
-        args:
-        - "pg_isready --timeout=300"
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: ping
+            image: postgres:16-alpine
+            env:
+            - name: PGHOST
+              value: "prod-db-postgres"
+            - name: PGUSER
+              value: "postgres"
+            - name: PGPASSWORD
+              value: "p0stgres"
+            - name: PGAPPNAME
+              value: "prod-db-ping"
+            - name: PGSSLMODE
+              value: "require"
+            command: ["/bin/bash", "-eux", "-c"]
+            args:
+            - "pg_isready --timeout=300"
