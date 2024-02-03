@@ -10,8 +10,9 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-db-ping
+        app: prod-db-ping
     spec:
+      restartPolicy: Always
       containers:
       - name: ping
         image: postgres:16-alpine
@@ -28,15 +29,4 @@ spec:
           value: "require"
         command: ["/bin/bash", "-eux", "-c"]
         args:
-        -   pg_isready --timeout=300;
-            psql --expanded --command="
-              SELECT
-                b.*
-              FROM
-                pg_stat_activity AS a INNER JOIN
-                pg_stat_ssl AS b on a.pid = b.pid
-              WHERE
-                a.application_name = 'prod-db-ping'
-              ;
-            ";
-      restartPolicy: Always
+        - "pg_isready --timeout=300"
