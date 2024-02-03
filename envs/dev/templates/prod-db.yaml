@@ -9,7 +9,7 @@ spec:
     chart: postgres
     path: developing
     repoURL: https://infrastructure-as-code.github.io/helm-charts
-    targetRevision: 0.2.1
+    targetRevision: 0.2.2
     helm:
       valuesObject:
         image:
