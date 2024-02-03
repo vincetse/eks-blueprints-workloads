@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-db-ping
+  labels:
+    app: prod-db-ping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prod-db-ping
+  template:
+    metadata:
+      labels:
+        app: nginx-db-ping
+    spec:
+      containers:
+      - name: ping
+        image: postgres:16-alpine
+        env:
+        - name: PGHOST
+          value: "prod-db-postgres"
+        - name: PGUSER
+          value: "postgres"
+        - name: PGPASSWORD
+          value: "p0stgres"
+        - name: PGAPPNAME
+          value: "prod-db-ping"
+        - name: PGSSLMODE
+          value: "require"
+        command: |
+          /bin/bash -eux -c "
+            pg_isready --timeout=300
+            psql --expanded --command=\"
+              SELECT
+                b.*
+              FROM
+                pg_stat_activity AS a INNER JOIN
+                pg_stat_ssl AS b on a.pid = b.pid
+              WHERE
+                a.application_name = 'prod-db-ping'
+              ;
+            \"
+          "
+      restartPolicy: Always
