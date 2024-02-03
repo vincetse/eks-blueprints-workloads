@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prod-db-ping
-  labels:
-    app: prod-db-ping
 spec:
   replicas: 1
   selector:
