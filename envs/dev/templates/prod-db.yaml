@@ -14,6 +14,8 @@ spec:
       valuesObject:
         image:
           tag: 16-alpine
+        service:
+          type: ClusterIP
   destination:
     namespace: {{ .Values.argoNamespace | default "argocd" }}
     server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
