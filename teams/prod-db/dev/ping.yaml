@@ -1,18 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: CronJob
 metadata:
   name: prod-db-ping
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: prod-db-ping
+  schedule: "* * * * *"
   template:
-    metadata:
-      labels:
-        app: prod-db-ping
     spec:
-      restartPolicy: Always
+      restartPolicy: OnFailure
       containers:
       - name: ping
         image: postgres:16-alpine
