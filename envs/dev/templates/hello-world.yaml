@@ -18,6 +18,8 @@ spec:
             kubernetes.io/ingress.class: nginx
           hosts:
           - "hello.x.io"
+          paths:
+          - "/"
   destination:
     namespace: {{ .Values.argoNamespace | default "argocd" }}
     server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
