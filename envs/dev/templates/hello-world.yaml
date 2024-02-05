@@ -9,7 +9,7 @@ spec:
     chart: hello-world
     path: incubating
     repoURL: https://infrastructure-as-code.github.io/helm-charts
-    targetRevision: 0.2.1-r5
+    targetRevision: 0.2.1-r6
     helm:
       valuesObject:
         ingress:
