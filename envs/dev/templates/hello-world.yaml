@@ -13,6 +13,7 @@ spec:
     helm:
       valuesObject:
         replicaCount: 3
+        namespace: {{ .Values.argoNamespace | default "argocd" }}
         ingress:
           enabled: true
           annotations:
