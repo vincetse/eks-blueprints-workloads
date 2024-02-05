@@ -12,6 +12,7 @@ spec:
     targetRevision: 0.2.1-r6
     helm:
       valuesObject:
+        replicaCount: 3
         ingress:
           enabled: true
           annotations:
