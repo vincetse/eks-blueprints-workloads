@@ -7,10 +7,8 @@ spec:
   project: {{ .Values.argoProject | default "default" }}
   source:
     chart: hello-world
-    #path: incubating
-    #repoURL: https://infrastructure-as-code.github.io/helm-charts
-    path: teams/hello-world/dev
-    repoURL: {{ .Values.spec.source.repoURL }}
+    path: incubating
+    repoURL: https://infrastructure-as-code.github.io/helm-charts
     targetRevision: 0.2.1-r5
     helm:
       valuesObject:
