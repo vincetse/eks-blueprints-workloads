@@ -26,6 +26,9 @@ spec:
       echo "sleep 5";
       for i in `seq 1 10`; do wget -q -O- http://php-apache; sleep 5; done;
       echo;
+      echo; "12000"
+      for i in `seq 1 12000`; do wget -q -O- http://php-apache; sleep 0.01; done;
+      echo;
       echo "finito";
 
     resources: {}
