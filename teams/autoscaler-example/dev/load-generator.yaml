@@ -12,7 +12,8 @@ spec:
     args:
     - /bin/sh
     - -c
-    - sleep 120;
+    - echo "starting";
+      sleep 120;
       echo "sleep 5";
       for i in `seq 1 10`; do wget -q -O- http://php-apache; sleep 5; done;
       echo "sleep 0.01";
