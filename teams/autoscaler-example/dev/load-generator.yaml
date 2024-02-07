@@ -16,12 +16,16 @@ spec:
       sleep 120;
       echo "sleep 5";
       for i in `seq 1 10`; do wget -q -O- http://php-apache; sleep 5; done;
+      echo
       echo "sleep 0.01";
       for i in `seq 1 1200`; do wget -q -O- http://php-apache; sleep 0.01; done;
+      echo
       echo "sleep 1";
       for i in `seq 1 300`; do wget -q -O- http://php-apache; sleep 1; done;
+      echo
       echo "sleep 5";
       for i in `seq 1 10`; do wget -q -O- http://php-apache; sleep 5; done;
+      echo
       echo "finito";
 
     resources: {}
