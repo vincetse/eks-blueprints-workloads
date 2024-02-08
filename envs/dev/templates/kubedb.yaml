@@ -15,7 +15,7 @@ spec:
     targetRevision: v2024.1.31
     helm:
       valueFiles:
-      - "kubedb-license.yaml"
+      - "../kubedb-license.yaml"
   syncPolicy:
     automated:
       prune: true
