@@ -12,6 +12,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: oci://ghcr.io/appscode-charts
+    chart: kubedb
     targetRevision: v2024.1.31
     helm:
       valueFiles:
