@@ -16,7 +16,7 @@ spec:
     targetRevision: v2024.1.31
     helm:
       valueFiles:
-      - "../kubedb-license.yaml"
+      - "{{ .Values.spec.source.repoURL }}/envs/dev/kubedb-license.yaml"
   syncPolicy:
     automated:
       prune: true
