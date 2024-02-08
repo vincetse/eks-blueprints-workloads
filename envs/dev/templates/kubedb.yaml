@@ -11,7 +11,9 @@ spec:
     namespace: kubedb
     server: {{ .Values.spec.destination.server }}
   source:
-    chart: oci://ghcr.io/appscode-charts/kubedb
+    repoUrl: https://charts.appscode.com
+    path: stable
+    chart: kubedb
     targetRevision: v2024.1.31
     helm:
       valueFiles:
