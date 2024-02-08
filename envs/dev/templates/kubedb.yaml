@@ -12,7 +12,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   source:
     chart: kubedb
-    repoUrl: https://charts.appscode.com
+    repoURL: https://charts.appscode.com
     path: stable
     targetRevision: v2024.1.31
     helm:
