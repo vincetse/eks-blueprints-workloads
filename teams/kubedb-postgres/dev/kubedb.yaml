@@ -4,7 +4,7 @@ metadata:
   name: postgres-cluster
   namespace: demo
 spec:
-  version: "15.1"
+  version: "15.5"
   replicas: 3
   standbyMode: Hot
   storageType: Durable
