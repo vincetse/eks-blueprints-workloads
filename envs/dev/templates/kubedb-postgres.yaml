@@ -1,18 +1,21 @@
-apiVersion: kubedb.com/v1alpha2
-kind: Postgres
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: postgres-cluster
+  name: kubedb-postgres
   namespace: demo
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
-  version: "15.1"
-  replicas: 3
-  standbyMode: Hot
-  storageType: Durable
-  storage:
-    storageClassName: "gp2"
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: 1Gi
-  terminationPolicy: WipeOut
+  project: default
+  destination:
+    namespace: demo
+    server: {{ .Values.spec.destination.server }}
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: teams/kubedb-postgres/dev
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
