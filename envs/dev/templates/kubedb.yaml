@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubedb
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: kubedb
+    server: {{ .Values.spec.destination.server }}
+  source:
+    chart: kubedb
+    repoURL: https://charts.appscode.com/stable
+    targetRevision: v2024.1.31
+    helm:
+      valuesObject:
+        global:
+          license: |
+            -----BEGIN CERTIFICATE-----
+            MIIEVzCCAz+gAwIBAgIIBNnDLkpxdu8wDQYJKoZIhvcNAQELBQAwJTEWMBQGA1UE
+            ChMNQXBwc0NvZGUgSW5jLjELMAkGA1UEAxMCY2EwHhcNMjQwMjEzMjI0MzA1WhcN
+            MjQwMzE0MjI0MzA1WjCCARgxDzANBgNVBAYTBmt1YmVkYjETMBEGA1UECBMKZW50
+            ZXJwcmlzZTGBpDAXBgNVBAoTEGt1YmVkYi1jb21tdW5pdHkwFwYDVQQKExBrdWJl
+            ZGItZXh0LXN0YXNoMBgGA1UEChMRa3ViZWRiLWF1dG9zY2FsZXIwGAYDVQQKExFr
+            dWJlZGItZW50ZXJwcmlzZTAcBgNVBAoTFXBhbm9wdGljb24tZW50ZXJwcmlzZTAe
+            BgNVBAoTF2t1YmVkYi1tb25pdG9yaW5nLWFnZW50MRowGAYDVQQLExFrdWJlZGIt
+            ZW50ZXJwcmlzZTEtMCsGA1UEAxMkYTdhYmIxZjMtYmJjZS00NWQ4LWJmNzMtNDE3
+            YjdmOGMwNzEzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtnNYtuTK
+            FGzt1uMhPh4zJaR5cb8YXCVHU2M/EsRYrlmaFyQgl1r/s6sLC+DERQcV3TtYJahe
+            EVxXsxFBxCHla068f0BA+ijHliz+tOLTmh8NaDAdV6o7WhSifA5ZTYNmJCgc5JZ0
+            rW9r4aEaMJSsEQ34jwR3U3G7FKcE52vFIH+dXeT3d/6K88n+KMtzaQaNB2bKMy04
+            mgA/SnLIOsN2yvZVjI3vmVXaqyK1oABDvrNuFO+2QeSbf70whb0NvChgMxX7xqEO
+            wh3nztv3cv60UJDQ61KCsB6ld0qrnFoBqLpWgpU2PN3MxgefDXppyq8OvNst04PA
+            VLYokql+0PgWOQIDAQABo4GVMIGSMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAK
+            BggrBgEFBQcDAjBrBgNVHREEZDBigiRhN2FiYjFmMy1iYmNlLTQ1ZDgtYmY3My00
+            MTdiN2Y4YzA3MTOBIlZpbmNlIFRzZSA8dnRzZStrdWJlZGJAYW1hem9uLmNvbT6B
+            FnZ0c2Ura3ViZWRiQGFtYXpvbi5jb20wDQYJKoZIhvcNAQELBQADggEBAIuX+eM/
+            pu3Xv18Gkn4wjpiHv8vTohyLVOidvHFmf0Xq4XmJ2knhLffU5kDSsQBb7gD5S3A6
+            3FJkluXxoUpjr4coDeXVAX2M2apQ8ly0TktfKhClfOBGoQ/ZQqV7vU/T0+0RSjoG
+            tq2G55j1w6B7WUvC0hzx9TdNrPLAKC33ftDWbl9oX7Jw+CBApDUxGUuK+jsc2Asd
+            35NJG2p1mVmhBOp0kuN9WEepKjaSxJpQYsWmwbTgQWRl8dQczHRsS9i9zCVdRMMp
+            D4v31JJOnbuP3rLiEVHUuInXPeYVhKwf7/REN12ASt4yksYNVIxtnKwAp/f4sixm
+            32G9OI2PWV+ld98=
+            -----END CERTIFICATE-----
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
