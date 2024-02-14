@@ -1,0 +1,18 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Postgres
+metadata:
+  name: postgres-cluster
+  namespace: demo
+spec:
+  version: "15.1"
+  replicas: 3
+  standbyMode: Hot
+  storageType: Durable
+  storage:
+    storageClassName: "gp2"
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  terminationPolicy: WipeOut
