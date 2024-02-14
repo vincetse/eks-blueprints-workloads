@@ -16,6 +16,6 @@ spec:
     path: teams/kubedb-postgres/dev
   syncPolicy:
     automated:
-      prune: true
+      prune: false
     syncOptions:
     - CreateNamespace=true
