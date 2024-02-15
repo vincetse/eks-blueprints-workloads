@@ -49,3 +49,10 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true
+  ignoreDifferences:
+  - group: ""
+    jsonPointers:
+    - /data
+    kind: Secret
+    name: postgres-cluster-auth
+    namespace: demo
