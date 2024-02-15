@@ -57,6 +57,6 @@ spec:
     namespace: demo
   - group: admissionregistration.k8s.io
     jsonPointers:
-    - /webhooks[]/clientConfig/caBundle
+    - /webhooks/clientConfig/caBundle
     kind: MutatingWebhookConfiguration
     namespace: demo
