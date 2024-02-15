@@ -54,7 +54,6 @@ spec:
     jsonPointers:
     - /data
     kind: Secret
-    name: postgres-cluster-auth
     namespace: demo
   - group: admissionregistration.k8s.io
     jsonPointers:
