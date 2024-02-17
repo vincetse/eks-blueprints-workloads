@@ -59,9 +59,9 @@ spec:
     jsonPointers:
     - /webhooks/clientConfig/caBundle
     kind: MutatingWebhookConfiguration
-    namespace: demo
+    namespace: kubedb
   - group: admissionregistration.k8s.io
     jsonPointers:
     - /webhooks/clientConfig/caBundle
     kind: ValidatingWebhookConfiguration
-    namespace: demo
+    namespace: kubedb
