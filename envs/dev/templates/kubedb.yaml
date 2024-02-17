@@ -63,5 +63,5 @@ spec:
   - group: admissionregistration.k8s.io
     jsonPointers:
     - /webhooks/clientConfig/caBundle
-    kind: VariableWebhookConfiguration
+    kind: ValidatingWebhookConfiguration
     namespace: demo
