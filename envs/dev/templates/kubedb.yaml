@@ -60,3 +60,8 @@ spec:
     - /webhooks/clientConfig/caBundle
     kind: MutatingWebhookConfiguration
     namespace: demo
+  - group: admissionregistration.k8s.io
+    jsonPointers:
+    - /webhooks/clientConfig/caBundle
+    kind: VariableWebhookConfiguration
+    namespace: demo
