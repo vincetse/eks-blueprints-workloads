@@ -13,36 +13,36 @@ spec:
   source:
     chart: kubedb
     repoURL: https://charts.appscode.com/stable
-    targetRevision: v2024.1.31
+    targetRevision: v2024.9.30
     helm:
       valuesObject:
         global:
           license: |
             -----BEGIN CERTIFICATE-----
-            MIIEVzCCAz+gAwIBAgIIN9Gl1gieIOAwDQYJKoZIhvcNAQELBQAwJTEWMBQGA1UE
-            ChMNQXBwc0NvZGUgSW5jLjELMAkGA1UEAxMCY2EwHhcNMjQwMjE3MDcyMDQ3WhcN
-            MjQwMzE4MDcyMDQ3WjCCARgxDzANBgNVBAYTBmt1YmVkYjETMBEGA1UECBMKZW50
+            MIIEZTCCA02gAwIBAgIIZE1BHpxnkJMwDQYJKoZIhvcNAQELBQAwJTEWMBQGA1UE
+            ChMNQXBwc0NvZGUgSW5jLjELMAkGA1UEAxMCY2EwHhcNMjQwOTI5MDUwMjM0WhcN
+            MjQxMDI5MDUwMjM0WjCCARgxDzANBgNVBAYTBmt1YmVkYjETMBEGA1UECBMKZW50
             ZXJwcmlzZTGBpDAXBgNVBAoTEGt1YmVkYi1jb21tdW5pdHkwFwYDVQQKExBrdWJl
             ZGItZXh0LXN0YXNoMBgGA1UEChMRa3ViZWRiLWF1dG9zY2FsZXIwGAYDVQQKExFr
             dWJlZGItZW50ZXJwcmlzZTAcBgNVBAoTFXBhbm9wdGljb24tZW50ZXJwcmlzZTAe
             BgNVBAoTF2t1YmVkYi1tb25pdG9yaW5nLWFnZW50MRowGAYDVQQLExFrdWJlZGIt
-            ZW50ZXJwcmlzZTEtMCsGA1UEAxMkMWRlNDkxNWUtMzFlNy00NDFmLWE1ZWMtYTJk
-            YWFiMjRmMWM0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArzPqwaUI
-            8oX/HKhnS5ZFEBEXJD9LDFMC0OUxUuHKDLyQUJQHJBMB/Pg1500ICkHUf+OeHaY3
-            8xn26k7345n358tXe47pxZ4+MEWeAF5LPlAuaayIlsFWtilqQt7LRWyMXReXLLAw
-            oFPO210d8eZ4mVHrOLVHAjHE3ENi47Uxukg9JwHQgr7W/rDWUrP62k5IALpJutUF
-            cqLsrEqePqTbkGzDVaZzzca3I+spSsuRa8zPkzhQ1zNDbqO+HdIGNKZWe4PetwRp
-            qW3bHjtSay/A9e7MKe+rviP0kseeDbl8vhd7QCibHUoWncWNp6koCQKlPk7taHWc
-            Hd8LD4fvHo2WLwIDAQABo4GVMIGSMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAK
-            BggrBgEFBQcDAjBrBgNVHREEZDBigiQxZGU0OTE1ZS0zMWU3LTQ0MWYtYTVlYy1h
-            MmRhYWIyNGYxYzSBIlZpbmNlIFRzZSA8dnRzZStrdWJlZGJAYW1hem9uLmNvbT6B
-            FnZ0c2Ura3ViZWRiQGFtYXpvbi5jb20wDQYJKoZIhvcNAQELBQADggEBAC1mcSAf
-            T1CT1dU+R+HI76ccLJBgXK3Q99q+ZdS9QAAQ+7PILd5pWNs5caTXTbjdDyxf1Hub
-            FyYbe5sd6o6hw16mH67zudFCVSZl+j6RUL6iglPtb3RaqXa+jfwqk9TrcSUnP55b
-            fj/cc6VqHv8giGCOSmLoVLxfchZETfDUy9E8Pps0h9ZNqkL+QVxU042bAU69rWz6
-            Z9RjdB5SKprW87PDLikGN4A00SpbRM1c0GuZYgjpYZn8mnrxS0eAGE3DY3R8gkkt
-            lUzCoi8LrYkEJ19SDqBeKX5fz7S07otK8MkigZ5kG46GWVkFuFmw5/COtrNVt2tJ
-            qTi6JCvudwI81Tk=
+            ZW50ZXJwcmlzZTEtMCsGA1UEAxMkMDQyZjI4ZjYtYTY2NS00OGUwLTkyMmEtN2Ri
+            NjYxODNkNjhlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA87BO2i/V
+            CL7cY7sD3dWg+RmZ8OPdoQgcc/sPn4nNrDlBrKolWoi01ghxES/kvFuyMbXlcfX9
+            AsM5ESisuBIXa7YIUXeBZidjHb2fRZOtbOg/WaxmL6QBNPGhwN7sBZkgap1K8POh
+            TGFXPQsYbV6voyf4BgUMEggKmEmWkfpic65YxqTcpzuzA95YrrKOU9Ny/S7kja92
+            hxWbyR7TZzvmEf/rbT6E7P6Y7BJgA0AQGIzeFfuaQti1retBx8lWAWlsgZeaLnk3
+            S2MEZXPsYv7/Yhmrdx83LYgrJYFPqm8pVw+PMSY5FMR5nF85BD1hyXDRyD6z+UJy
+            nKjUEE3xipIvyQIDAQABo4GjMIGgMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAK
+            BggrBgEFBQcDAjAfBgNVHSMEGDAWgBTZMREkIF69G3qzMCLSm9DzksSgeTBYBgNV
+            HREEUTBPgiQwNDJmMjhmNi1hNjY1LTQ4ZTAtOTIyYS03ZGI2NjE4M2Q2OGWBFnZ0
+            c2UgPHZ0c2VAYW1hem9uLmNvbT6BD3Z0c2VAYW1hem9uLmNvbTANBgkqhkiG9w0B
+            AQsFAAOCAQEAhhlAbKxWlmU8cnp2tbdmluPWlRzbt+4pJKlI7Q4w/2sgquKYEvxA
+            mPJa09OTocJh/9aMwHLAe2LYMxBXWsITh0MFMmCKyYwEzZrhZmIYH5xdKfDeKlKW
+            mkH3v9wfVRJ1lQxYN5EZEC0QkL07IJxYWn+0WT3NJ9gxkZLmsBOo64wsw8juinIX
+            8gFR51fNhsEur2sVsMbnlOAwshCStOJQ+84w0c0ndA74CjKQyboekc8xmeSLMu82
+            n0B+0cLpwp/dxK0g43RBQJf8xIDdKctR4G9ZWmgcQCgovBJh46sfdE9Na7q/uwCG
+            0J8QuCKlY2UXcLCdstYlAJ0RmXGd9RYf2w==
             -----END CERTIFICATE-----
   syncPolicy:
     automated:
