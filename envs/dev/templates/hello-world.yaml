@@ -14,6 +14,8 @@ spec:
       valuesObject:
         replicaCount: 3
         namespace: {{ .Values.argoNamespace | default "argocd" }}
+        service:
+          type: LoadBalancer
         ingress:
           enabled: true
           annotations:
