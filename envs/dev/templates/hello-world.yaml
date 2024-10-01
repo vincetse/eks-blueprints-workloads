@@ -15,14 +15,12 @@ spec:
         replicaCount: 3
         namespace: {{ .Values.argoNamespace | default "argocd" }}
         service:
-          type: LoadBalancer
-          port: 80
+          type: ClusterIP
+          port: 8080
         ingress:
           enabled: true
           annotations:
-            service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
-            service.beta.kubernetes.io/aws-load-balancer-security-groups: "web-sg"
-            #kubernetes.io/ingress.class: nginx
+            kubernetes.io/ingress.class: nginx
           hosts:
           - "hello.x.io"
           paths:
